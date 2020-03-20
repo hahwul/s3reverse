@@ -1,7 +1,7 @@
 # s3reverse
 ## Install
 ```cassandraql
-$ go get -u github/hahwul/s3reverse
+$ go get -u github.com/hahwul/s3reverse
 ```
 ## Usage
 ### Input options
