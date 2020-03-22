@@ -1,4 +1,7 @@
 # s3reverse
+
+<img src="https://img.shields.io/github/languages/top/hahwul/s3reverse"> <img src="https://img.shields.io/github/license/hahwul/s3reverse.svg"> <a href="https://twitter.com/intent/follow?screen_name=hahwul"><img src="https://img.shields.io/twitter/follow/hahwul?style=flat-square"></a>
+
 ## Install
 ```cassandraql
 $ go get -u github.com/hahwul/s3reverse
