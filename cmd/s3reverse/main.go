@@ -1,4 +1,4 @@
-package s3reverse
+package main
 
 import (
 	"bufio"
