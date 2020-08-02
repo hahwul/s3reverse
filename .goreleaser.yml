@@ -1,0 +1,76 @@
+project_name: s3reverse
+
+before:
+  hooks:
+  - go mod download
+
+builds:
+  -
+    main: .
+    binary: s3reverse
+    goos:
+      - windows
+      - linux
+      - darwin
+      - freebsd
+    goarch:
+      - amd64
+      - 386
+    ignore:
+      - goos: darwin
+        goarch: 386
+      - goos: darwin
+        goarch: arm
+      - goos: darwin
+        goarch: arm64
+      - goos: windows
+        goarch: 386
+      - goos: windows
+        goarch: arm
+      - goos: windows
+        goarch: arm64
+      - goos: freebsd
+        goarch: arm
+
+checksum:
+  name_template: "{{ .ProjectName }}_checksums.txt"
+
+changelog:
+  sort: desc
+  filters:
+    exclude:
+    - '^MERGE'
+    - "{{ .Tag }}"
+
+release:
+  github:
+    owner: hahwul
+    name: s3reverse
+
+brews:
+  -
+    name: s3reverse
+    tap:
+      owner: hahwul
+      name: homebrew-s3reverse
+    url_template: "https://github.com/hahwul/dalfox/releases/download/{{ .Tag }}/{{ .ArtifactName }}"
+    commit_author:
+      name: hahwul
+      email: hahwul@gmail.com
+    folder: Formula
+    homepage: "https://www.hahwul.com"
+    description: "The format of various s3 buckets is convert in one format. for bugbounty and security testing."
+    test: |
+      system "#{bin}/s3reverse"
+    install: |
+      bin.install "s3reverse"
+snapcrafts:
+  -
+    name: s3reverse
+    # Remember you need to `snapcraft login` first.
+    publish: true
+    summary: The format of various s3 buckets is convert in one format. for bugbounty and security testing.
+    description: The format of various s3 buckets is convert in one format. for bugbounty and security testing.
+    grade: stable
+    confinement: strict
+    license: MIT
