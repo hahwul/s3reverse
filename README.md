@@ -3,9 +3,21 @@
 <img src="https://img.shields.io/github/languages/top/hahwul/s3reverse"> <img src="https://api.codacy.com/project/badge/Grade/41ad2fa60442493299e97e782916fe23"> <img src="https://img.shields.io/github/license/hahwul/s3reverse.svg"> <a href="https://twitter.com/intent/follow?screen_name=hahwul"><img src="https://img.shields.io/twitter/follow/hahwul?style=flat-square"></a>
 
 ## Install
+### go get 
 ```cassandraql
 $ go get -u github.com/hahwul/s3reverse
 ```
+### snap
+```
+snap install s3reverse
+```
+### brew
+```
+$ brew tap hahwul/s3reverse
+$ brew install s3reverse
+```
+
+
 ## Usage
 ### Input options
 Basic Usage
