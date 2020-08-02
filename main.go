@@ -19,6 +19,7 @@ const (
 )
 
 func banner() {
+	VERSION := "v1.0.0"
 	fmt.Println(`
 8""""8 eeee       8"""8  8"""" 88   8 8"""" 8"""8  8""""8 8"""" 
 8         8       8   8  8     88   8 8     8   8  8      8     
@@ -27,9 +28,10 @@ func banner() {
 e   88    88      88   8 88     8  8  88    88   8 e   88 88    
 8eee88 eee88      88   8 88eee  8ee8  88eee 88   8 8eee88 88eee  
 `)
-	fmt.Println("by @hahwul")
+	fmt.Println("by @hahwul | "+VERSION)
 	fmt.Println("")
 }
+
 
 func main() {
 	// input options
