@@ -88,7 +88,7 @@ func main() {
 				req, _ := http.NewRequest("GET", "https://s3.amazonaws.com/"+s, nil)
 				resp, err := DefaultTransport.RoundTrip(req)
 				if err != nil {
-					fmt.Printf("#{err}")
+					fmt.Printf("%s", err)
 					return
 				}
 				defer resp.Body.Close()
