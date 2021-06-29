@@ -86,7 +86,11 @@ func main() {
 				defer wg.Done()
 				var DefaultTransport http.RoundTripper = &http.Transport{}
 				req, _ := http.NewRequest("GET", "https://s3.amazonaws.com/"+s, nil)
-				resp, _ := DefaultTransport.RoundTrip(req)
+				resp, err := DefaultTransport.RoundTrip(req)
+				if err != nil {
+					fmt.Printf("%s", err)
+					return
+				}
 				defer resp.Body.Close()
 				contents, err := ioutil.ReadAll(resp.Body)
 				if err != nil {
