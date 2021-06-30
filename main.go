@@ -20,7 +20,7 @@ const (
 
 func banner() {
 	VERSION := "v1.0.0"
-	fmt.Println(`
+	fmt.Printf(`
 8""""8 eeee       8"""8  8"""" 88   8 8"""" 8"""8  8""""8 8"""" 
 8         8       8   8  8     88   8 8     8   8  8      8     
 8eeeee    8       8eee8e 8eeee 88  e8 8eeee 8eee8e 8eeeee 8eeee 
