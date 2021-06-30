@@ -160,3 +160,6 @@ Find S3 bucket takeover
 ```cassandraql
 $ meg -d 1000 -v / ; cd out ; gf s3-buckets | s3reverse -verify | grep NoSuchBucket > takeovers
 ```
+
+## Contributors
+[![](/CONTRIBUTORS.svg)](https://github.com/hahwul/s3reverse/graphs/contributors)
