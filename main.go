@@ -65,9 +65,10 @@ func main() {
 		}
 	} else {
 		target, err := readLinesOrLiteral(*iL)
-		_ = err
-		for i, s := range target {
-			_ = i
+		if err != nil {
+			fmt.Println(err)
+		}
+		for _, s := range target {
 			var s3 = identifys3(s)
 			if s3 != "" {
 				s3Buckets = append(s3Buckets, s3)
@@ -152,17 +153,14 @@ func identifys3(t string) string {
 	if path {
 		target = strings.Replace(target, "s3.amazonaws.com/", "", 1)
 		target = strings.Split(target, "/")[0]
-		return target
 	} else if vh {
 		target = strings.Replace(target, ".s3.amazonaws.com", "", 1)
 		target = strings.Split(target, "/")[0]
-		return target
 	} else if url {
 		target = strings.Replace(target, "s3://", "", 1)
 		target = strings.Split(target, "/")[0]
-		return target
 	}
-	return ""
+	return target
 }
 
 // readLines reads all of the lines from a text file in to
